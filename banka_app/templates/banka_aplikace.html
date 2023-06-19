@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Bank App
+{% endblock %}
+
+{% block content %}
+<div class="p-5 bg-warning text-white ">
+    <h1>BANKA 55XO7</h1>
+</div>
+<span style="font-size:30px;cursor:pointer " onclick="openNav()">&#9776; OPEN</span>
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="{% url 'uzivatele' %}">Uživatelé</a>
+    <a href="{% url 'pridat-uzivatele' %}">Přidat uživatele</a>
+</div>
+<div class="list">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-sm-4 pt-5">
+                <h3>Bankovnictví</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+            </div>
+            <div class="col-sm-4 pt-5">
+                <h3>Účty</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+            </div>
+            <div class="col-sm-4 pt-5">
+                <h3>Přidání účtu</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="{% static 'css/style-banka-aplikace.css' %}">
+<script src="{% static 'js/script-banka-aplikace.js' %}"></script>
+{% endblock %}

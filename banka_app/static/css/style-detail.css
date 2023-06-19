@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+
+body {
+  background-image: url('/static/images/pozadi_obrazek.jpg');
+  background-repeat: repeat;
+  background-size: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.detail {
+  max-width: 500px;
+  width: 100%;
+  background: #e9e9e9a7;
+  margin: 50px auto;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.125);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #000000;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.detail-info {
+  margin-bottom: 15px;
+}
+
+.detail-info p {
+  margin-bottom: 10px;
+  color: #757575;
+  font-size: 14px;
+}
+
+.nenalezen p {
+  margin: 0;
+  color: #616161;
+}
+
+.pridat{
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 15px; 
+  border: 2px;
+  background-color:  #fec107;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  border-radius: 3px;
+  outline: none;
+  transition: 0.5s;
+}
+
+.pridat:hover {
+  background: #fec107;
+  font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+

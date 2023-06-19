@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Detail uživatele - Bank App
+{% endblock %}
+
+{% block content %}
+<div class="detail">
+    <h1>Detail uživatele</h1>
+    {% if uzivatel %}
+    <div class="detail-info">
+        <p><strong>Jméno: </strong> {{ uzivatel.jmeno }}</p>
+        <p><strong>Příjmení: </strong> {{ uzivatel.prijmeni }}</p>
+        <p><strong>Email: </strong> {{ uzivatel.email }}</p>
+        <p><strong>Datum vytvoření: </strong> {{ uzivatel.datum_vytvoreni }}</p>
+        <p><strong>Datum posledního přihlášení: </strong> {{ uzivatel.datum_posledniho_prihlaseni }}</p>
+        <h2>Účet:</h2>
+        {% for ucet in uzivatel.ucty_set.all %}
+        <p><strong>Číslo účtu: </strong> {{ ucet.cislo_uctu }}</p>
+        <p><strong>Zůstatek na účtu: </strong> {{ ucet.zustatek }} Kč </p>
+        {% empty %}
+        <p>Tento uživatel nemá žádné účty.</p>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="nenalezen">
+        <p>Uživatel nebyl nalezen.</p>
+    </div>
+    {% endif %}
+    <a href="{% url 'uzivatele' %}"><button class="pridat">Zpět na seznam uživatelů</button></a>
+</div>
+
+
+<link rel="stylesheet" href="{% static 'css/style-detail.css' %}">
+{% endblock %}

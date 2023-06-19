@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Pridat uzivatele
+{% endblock %}
+
+{% block content %}
+<div class="list">
+  <h1>Přidat uživatele</h1>
+  <form method="POST">
+    {% csrf_token %}
+    <div class="forma">
+      <div class="zadavani">
+        <label for="jmeno">Jméno:</label>
+        <input type="text" class="vstup" name="jmeno" required><br>
+      </div>
+      <div class="zadavani">
+        <label for="prijmeni">Příjmení:</label>
+        <input type="text" class="vstup" name="prijmeni" required><br>
+      </div>
+      <div class="zadavani">
+        <label for="email">Email:</label>
+        <input type="email" class="vstup" name="email" required><br>
+      </div>
+      <div class="zadavani">
+        <label for="heslo">Heslo:</label>
+        <input type="password" class="vstup" name="heslo" required><br>
+      </div>
+      <div class="zadavani">
+        <input name="selectedValue" class="souhlas" id="souhlas" type="checkbox" value="ANO" required> 
+        <p>Souhlasím s <a href="{% url 'podminky' %}"><b>podmínkami</b></a></p>
+      </div>
+      <button type="submit" class="pridat">Přidat</button>
+    </div>
+  </form>
+</div>
+<link rel="stylesheet" href="{% static 'css/style-pridat-uzivatele.css' %}">
+{% endblock %}

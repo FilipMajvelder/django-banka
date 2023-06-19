@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Accounts - Bank App
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="list">
+                <div class="mt-3 p-5">
+                    <h1>Seznam uživatelů</h1>
+                </div>
+                <table class="table table-striped mt-3">
+                    <thead>
+                        <tr>
+                            <th>Jméno uživatele</th>
+                            <th>Detail</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for uzivatel in uzivatele %}
+                        <tr>
+                            <td>{{ uzivatel.jmeno }} {{ uzivatel.prijmeni }}</td>
+                            <td><a href="{% url 'detail-uzivatele' uzivatel.id %}"
+                                    class="btn btn-outline-dark">Detail</a></td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="2">Žádní uživatelé nebyli nalezeni.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="list-side">
+                <h2>Informace o uživatelích</h2>
+                <ul>
+                    <li>Počet uživatelů: <b>{{ uzivatele.count }}</b></li>
+                    <li>Nejnovější uživatel: <b>{{ posledni_uzivatel.jmeno }} {{ posledni_uzivatel.prijmeni }}</b></li>
+                    <li>První uživatel: <b>{{ prvni_uzivatel.jmeno }} {{ prvni_uzivatel.prijmeni }}</b></li>
+                </ul>
+                <a href="{% url 'pridat-uzivatele' %}" class="btn btn-warning">Přidat uživatele</a>
+            </div>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="{% static 'css/style-accounts.css' %}">
+{% endblock %}

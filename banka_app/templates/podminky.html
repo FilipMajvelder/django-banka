@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Podmínky
+{% endblock %}
+
+{% block content %}
+<div class="list">
+    <h1>Podmínky</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="forma">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam autem minus
+                nisi voluptatum doloribus alias rerum veniam, facilis, nihil non tempore numquam,
+                eveniet maiores corporis nesciunt rem. Quibusdam porro at, quisquam optio placeat
+                ex ipsam tenetur quasi cum. Ipsa eos enim ipsam labore fuga mollitia omnis dolorem
+                in ut facere.
+            <br>
+            <br>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam autem minus
+                nisi voluptatum doloribus alias rerum veniam, facilis, nihil non tempore numquam,
+                eveniet maiores corporis nesciunt rem. Quibusdam porro at, quisquam optio placeat
+                ex ipsam tenetur quasi cum. Ipsa eos enim ipsam labore fuga mollitia omnis dolorem
+                in ut facere.
+            <br>
+            <br>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam autem minus
+                nisi voluptatum doloribus alias rerum veniam, facilis, nihil non tempore numquam,
+                eveniet maiores corporis nesciunt rem. Quibusdam porro at, quisquam optio placeat
+                ex ipsam tenetur quasi cum. Ipsa eos enim ipsam labore fuga mollitia omnis dolorem
+                in ut facere.
+            </p>
+            <br>
+            <br>
+            <button class="pridat"><a href="{% url 'pridat-uzivatele' %}">Zpět na přidání účtu</a></button>
+        </div>
+    </form>
+</div>
+<link rel="stylesheet" href="{% static 'css/style-pridat-uzivatele.css' %}">
+{% endblock %}
